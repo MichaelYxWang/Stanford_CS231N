@@ -119,8 +119,20 @@ class TwoLayerNet(object):
     dscores = np.exp(scores)/exp_sum - mask
 
     grads['W2'] = np.dot(a1.T,dscores)
-    grads['b2'] = np.sum()
+    grads['b2'] = np.sum(dscores,axis=0)
+    dA1 = np.dot(dscores,W2.T)
+    # backprop the ReLU non-linearity
+    dA1[a1<=0] = 0
+    grads['W1'] = np.dot(X.T,dA1)
+    grads['b1'] = np.sum(dA1,axis=0)
 
+    grads['W2'] /= num_train
+    grads['W1'] /= num_train
+    grads['b2'] /= num_train
+    grads['b1'] /= num_train
+    
+    grads['W2'] += 2*reg*W2
+    grads['W1'] += 2*reg*W1
     #############################################################################
     #                              END OF YOUR CODE                             #
     #############################################################################
@@ -164,7 +176,9 @@ class TwoLayerNet(object):
       # TODO: Create a random minibatch of training data and labels, storing  #
       # them in X_batch and y_batch respectively.                             #
       #########################################################################
-      pass
+      sample_indices = np.random.choice(range(num_train),batch_size,replace=True)
+      X_batch = X[sample_indices]
+      y_batch = y[sample_indices]
       #########################################################################
       #                             END OF YOUR CODE                          #
       #########################################################################
@@ -179,7 +193,10 @@ class TwoLayerNet(object):
       # using stochastic gradient descent. You'll need to use the gradients   #
       # stored in the grads dictionary defined above.                         #
       #########################################################################
-      pass
+      self.params['W1'] += -learning_rate * grads['W1']
+      self.params['b1'] += -learning_rate * grads['b1']
+      self.params['W2'] += -learning_rate * grads['W2']
+      self.params['b2'] += -learning_rate * grads['b2']
       #########################################################################
       #                             END OF YOUR CODE                          #
       #########################################################################
@@ -224,7 +241,10 @@ class TwoLayerNet(object):
     ###########################################################################
     # TODO: Implement this function; it should be VERY simple!                #
     ###########################################################################
-    pass
+    z1 = X.dot(self.params['W1']) + self.params['b1']
+    a1 = np.maximum(0, z1) # pass through ReLU activation function
+    scores = a1.dot(self.params['W2']) + self.params['b2']
+    y_pred = np.argmax(scores,axis=1)
     ###########################################################################
     #                              END OF YOUR CODE                           #
     ###########################################################################
