@@ -68,6 +68,7 @@ class TwoLayerNet(object):
     W1, b1 = self.params['W1'], self.params['b1']
     W2, b2 = self.params['W2'], self.params['b2']
     N, D = X.shape
+    num_train = N
 
     # Compute the forward pass
     scores = None
@@ -76,7 +77,9 @@ class TwoLayerNet(object):
     # Store the result in the scores variable, which should be an array of      #
     # shape (N, C).                                                             #
     #############################################################################
-    pass
+    z1 = X.dot(W1) + b1
+    a1 = np.maximum(0,z1)
+    scores = a1.dot(W2) + b2
     #############################################################################
     #                              END OF YOUR CODE                             #
     #############################################################################
@@ -93,7 +96,13 @@ class TwoLayerNet(object):
     # in the variable loss, which should be a scalar. Use the Softmax           #
     # classifier loss.                                                          #
     #############################################################################
-    pass
+    scores -= np.max(scores,axis=1,keepdims=True)
+    exp_correct_score = np.exp(scores[range(num_train),y])
+    exp_sum = np.sum(np.exp(scores),axis=1,keepdims=True)
+    loss = np.sum(-np.log(np.divide(exp_correct_score[:,np.newaxis],exp_sum)))
+
+    loss /= num_train
+    loss += reg * np.sum(W1 * W1) + reg * np.sum(W2 * W2)
     #############################################################################
     #                              END OF YOUR CODE                             #
     #############################################################################
@@ -105,7 +114,13 @@ class TwoLayerNet(object):
     # and biases. Store the results in the grads dictionary. For example,       #
     # grads['W1'] should store the gradient on W1, and be a matrix of same size #
     #############################################################################
-    pass
+    mask = np.zeros((np.exp(scores)/exp_sum).shape)
+    mask[range(num_train),y] = 1
+    dscores = np.exp(scores)/exp_sum - mask
+
+    grads['W2'] = np.dot(a1.T,dscores)
+    grads['b2'] = np.sum()
+
     #############################################################################
     #                              END OF YOUR CODE                             #
     #############################################################################
