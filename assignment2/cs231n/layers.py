@@ -178,7 +178,17 @@ def batchnorm_forward(x, gamma, beta, bn_param):
         # variance, storing your result in the running_mean and running_var   #
         # variables.                                                          #
         #######################################################################
-        pass
+        mu = np.mean(x,axis=0)
+        diff = x - mu
+        sigma2 = np.sum(diff**2,axis=0)
+        denominator = np.sqrt(sigma2+eps)
+        x_hat = diff/denominator
+        out = gamma*x_hat + beta
+
+        running_mean = running_mean*momentum + (1-momentum)*mu
+        running_var = running_var*momentum + (1-momentum)*sigma2
+
+        cache = (mode, diff, sigma2, denominator, x_hat, gamma, beta)
         #######################################################################
         #                           END OF YOUR CODE                          #
         #######################################################################
@@ -189,7 +199,7 @@ def batchnorm_forward(x, gamma, beta, bn_param):
         # then scale and shift the normalized data using gamma and beta.      #
         # Store the result in the out variable.                               #
         #######################################################################
-        pass
+        
         #######################################################################
         #                          END OF YOUR CODE                           #
         #######################################################################
@@ -225,7 +235,19 @@ def batchnorm_backward(dout, cache):
     # TODO: Implement the backward pass for batch normalization. Store the    #
     # results in the dx, dgamma, and dbeta variables.                         #
     ###########################################################################
-    pass
+    mode = cache[0]
+    if mode == 'train':
+        mode, diff, sigma2, denominator, x_hat, gamma, beta = cache
+        dbeta = np.sum(dout,axis=0)
+        dgamma = np.sum(dout*x_hat,axis=0)
+        
+
+
+
+    elif mode == 'test':
+
+    else:
+        raise ValueError('Invalid forward batchnorm mode "%s"' % mode) 
     ###########################################################################
     #                             END OF YOUR CODE                            #
     ###########################################################################
