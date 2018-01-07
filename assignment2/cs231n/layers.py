@@ -180,7 +180,7 @@ def batchnorm_forward(x, gamma, beta, bn_param):
         #######################################################################
         mu = np.mean(x,axis=0)
         diff = x - mu
-        sigma2 = np.sum(diff**2,axis=0)
+        sigma2 = np.mean(diff**2,axis=0)
         denominator = np.sqrt(sigma2+eps)
         x_hat = diff/denominator
         out = gamma*x_hat + beta
@@ -240,7 +240,12 @@ def batchnorm_backward(dout, cache):
         mode, diff, sigma2, denominator, x_hat, gamma, beta = cache
         dbeta = np.sum(dout,axis=0)
         dgamma = np.sum(dout*x_hat,axis=0)
-        
+        # Compute dx using chain rule
+        dxhat = gamma*dout
+        ddenominator = -np.sum(dxhat*diff/(denominator*denominator),axis=0)
+        dsigma2 = 0.5*ddenominator/denominator
+        ddiff = dxhat/denominator + dsigma2*2.0*diff/N
+
 
 
 
