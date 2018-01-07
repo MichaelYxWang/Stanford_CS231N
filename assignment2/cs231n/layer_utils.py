@@ -33,7 +33,16 @@ def affine_relu_backward(dout, cache):
 # Student added helper function
 def affine_batchnorm_relu_forward(x,w,b,gamma,beta,bn_param):
     """
-    Backward pass for the affine-batchnorm-relu convenience layer
+    Convenience layer that perorms an affine-batchnorm-relu transform
+
+    Inputs:
+    - x: Input to the affine layer
+    - w, b: Weights for the affine layer
+    - gamma,beta,bn_param: for batchnorm
+
+    Returns a tuple of:
+    - out: Output from the ReLU
+    - cache: Object to give to the backward pass
     """
     a, fc_cache = affine_forward(x, w, b)
     batch_out,batch_cache = batchnorm_forward(a, gamma, beta, bn_param)
@@ -43,12 +52,43 @@ def affine_batchnorm_relu_forward(x,w,b,gamma,beta,bn_param):
 
 # Student added helper function
 def affine_batchnorm_relu_backward(dout, cache):
+    """
+    Backward pass for the affine-batchnorm-relu convenience layer
+    """
     fc_cache,batch_cache,relu_cache = cache
     dbatch = relu_backward(dout, relu_cache)
     da, dgamma, dbeta = batchnorm_backward(dbatch,batch_cache)
     dx, dw, db = affine_backward(da, fc_cache)
     return dx, dw, db, dgamma, dbeta
 
+# Student added helper function
+def affine_relu_dropout_forward(x, w, b, dropout_param):
+    """
+    Convenience layer that perorms an affine-relu-dropout transform
+
+    Inputs:
+    - x: Input to the affine layer
+    - w, b: Weights for the affine layer
+    - dropout_param: for dropout
+
+    Returns a tuple of:
+    - out: Output from the ReLU
+    - cache: Object to give to the backward pass
+    """
+    a,relu_cache = affine_relu_forward(x, w, b)
+    out, dropout_cache = dropout_forward(a, dropout_param)
+    cache = (relu_cache, dropout_cache)
+    return out, cache
+
+# Student added helper function
+def affine_relu_dropout_backward(dout, cache):
+    """
+    Backward pass for the affine-relu-dropout convenience layer
+    """
+    relu_cache, dropout_cache = cache
+    ddropout = dropout_backward(dout, dropout_cache)
+    dx, dw, db = affine_relu_backward(ddropout, relu_cache)
+    return dx, dw, db
 
 def conv_relu_forward(x, w, b, conv_param):
     """

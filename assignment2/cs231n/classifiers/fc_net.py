@@ -260,9 +260,12 @@ class FullyConnectedNet(object):
         for i in range(1,self.num_layers): 
             if self.use_batchnorm:
                 layer[i],layer_cache[i] = affine_batchnorm_relu_forward(layer[i-1], self.params["W" + str(i)],self.params["b" + str(i)],
-                                                                    self.params["gamma" + str(i)],self.params["beta" + str(i)],self.bn_params[i-1])
-            else:
+                                                                        self.params["gamma" + str(i)],self.params["beta" + str(i)],self.bn_params[i-1])
+            elif self.use_dropout:
+                layer[i],layer_cache[i] = affine_relu_dropout_forward(layer[i-1], self.params["W" + str(i)],self.params["b" + str(i)], self.dropout_param)
+            else:    
                 layer[i],layer_cache[i] = affine_relu_forward(layer[i-1], self.params["W" + str(i)],self.params["b" + str(i)])
+
 
         scores,scores_cache = affine_forward(layer[self.num_layers-1],
                                              self.params["W" + str(self.num_layers)],
@@ -297,9 +300,11 @@ class FullyConnectedNet(object):
         for i in reversed(range(1,self.num_layers)):
             if self.use_batchnorm:
                 dx[i], grads["W" + str(i)], grads["b" + str(i)], grads["gamma" + str(i)], grads["beta" + str(i)] = affine_batchnorm_relu_backward(dx[i+1],layer_cache[i])
+            elif self.use_dropout:
+                dx[i], grads["W" + str(i)], grads["b" + str(i)] = affine_relu_dropout_backward(dx[i+1],layer_cache[i])
             else:
                 dx[i], grads["W" + str(i)], grads["b" + str(i)] = affine_relu_backward(dx[i+1],layer_cache[i])
-        
+
         # Compute regularization loss and gradients for all Ws
         reg_loss = 0.0
         for i in range(1,self.num_layers+1):
