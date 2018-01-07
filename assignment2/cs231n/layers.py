@@ -188,7 +188,7 @@ def batchnorm_forward(x, gamma, beta, bn_param):
         running_mean = running_mean*momentum + (1-momentum)*mu
         running_var = running_var*momentum + (1-momentum)*sigma2
 
-        cache = (mode, diff, sigma2, denominator, x_hat, gamma, beta)
+        cache = (mode, diff, sigma2, denominator, x_hat, gamma, beta, x)
         #######################################################################
         #                           END OF YOUR CODE                          #
         #######################################################################
@@ -199,7 +199,11 @@ def batchnorm_forward(x, gamma, beta, bn_param):
         # then scale and shift the normalized data using gamma and beta.      #
         # Store the result in the out variable.                               #
         #######################################################################
-        
+        denominator = np.sqrt(running_var + eps)
+        x_hat = (x - running_mean)/denominator
+        out = gamma*x_hat + beta
+
+        cache = (mode, denominator, x_hat, gamma, beta, x)
         #######################################################################
         #                          END OF YOUR CODE                           #
         #######################################################################
@@ -237,22 +241,25 @@ def batchnorm_backward(dout, cache):
     ###########################################################################
     mode = cache[0]
     if mode == 'train':
-        mode, diff, sigma2, denominator, x_hat, gamma, beta = cache
+        mode, diff, sigma2, denominator, x_hat, gamma, beta, x = cache
         dbeta = np.sum(dout,axis=0)
         dgamma = np.sum(dout*x_hat,axis=0)
         # Compute dx using chain rule
+        N = x.shape[0]
         dxhat = gamma*dout
         ddenominator = -np.sum(dxhat*diff/(denominator*denominator),axis=0)
         dsigma2 = 0.5*ddenominator/denominator
         ddiff = dxhat/denominator + dsigma2*2.0*diff/N
-
-
-
-
+        dmu = np.sum(ddiff,axis=0)
+        dx = ddiff - dmu/N
     elif mode == 'test':
-
+        mode, denominator, x_hat, gamma, beta, x = cache
+        dbeta = np.sum(dout,axis=0)
+        dgamma = np.sum(dout*x,axis=0)
+        dxhat = gamma*dout
+        dx = dxhat/denominator
     else:
-        raise ValueError('Invalid forward batchnorm mode "%s"' % mode) 
+        raise ValueError('Invalid backward batchnorm mode "%s"' % mode) 
     ###########################################################################
     #                             END OF YOUR CODE                            #
     ###########################################################################

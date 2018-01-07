@@ -189,6 +189,11 @@ class FullyConnectedNet(object):
             self.params[layer_weight_name] = np.random.randn(dims[i],dims[i+1])*weight_scale
             layer_bias_name = "b" + str(i+1)
             self.params[layer_bias_name] = np.zeros(dims[i+1])
+            if self.use_batchnorm and i < self.num_layers-1:
+                layer_gamma_name = "gamma" + str(i+1)
+                self.params[layer_gamma_name] = np.ones([dims[i+1]])
+                layer_beta_name = "beta" + str(i+1)
+                self.params[layer_beta_name] = np.zeros([dims[i+1]])
 
         ############################################################################
         #                             END OF YOUR CODE                             #
@@ -253,8 +258,12 @@ class FullyConnectedNet(object):
         layer[0] = X
         layer_cache = {}
         for i in range(1,self.num_layers): 
-            layer[i],layer_cache[i] = affine_relu_forward(layer[i-1], self.params["W" + str(i)],self.params["b" + str(i)])
-        
+            if self.use_batchnorm:
+                layer[i],layer_cache[i] = affine_batchnorm_relu_forward(layer[i-1], self.params["W" + str(i)],self.params["b" + str(i)],
+                                                                    self.params["gamma" + str(i)],self.params["beta" + str(i)],self.bn_params[i-1])
+            else:
+                layer[i],layer_cache[i] = affine_relu_forward(layer[i-1], self.params["W" + str(i)],self.params["b" + str(i)])
+
         scores,scores_cache = affine_forward(layer[self.num_layers-1],
                                              self.params["W" + str(self.num_layers)],
                                              self.params["b" + str(self.num_layers)])
@@ -286,8 +295,11 @@ class FullyConnectedNet(object):
         dx[self.num_layers], grads["W" + str(self.num_layers)],grads["b" + str(self.num_layers)] = affine_backward(dscores,scores_cache)
         
         for i in reversed(range(1,self.num_layers)):
-            dx[i], grads["W" + str(i)], grads["b" + str(i)] = affine_relu_backward(dx[i+1],layer_cache[i])
-
+            if self.use_batchnorm:
+                dx[i], grads["W" + str(i)], grads["b" + str(i)], grads["gamma" + str(i)], grads["beta" + str(i)] = affine_batchnorm_relu_backward(dx[i+1],layer_cache[i])
+            else:
+                dx[i], grads["W" + str(i)], grads["b" + str(i)] = affine_relu_backward(dx[i+1],layer_cache[i])
+        
         # Compute regularization loss and gradients for all Ws
         reg_loss = 0.0
         for i in range(1,self.num_layers+1):
