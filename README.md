@@ -41,3 +41,19 @@ Neural Networks"[[pdf]](https://papers.nips.cc/paper/4824-imagenet-classificatio
 **[5]** "Two-Stream Convolutional Networks for Action Recognition in Videos"[[pdf]](https://arxiv.org/pdf/1406.2199.pdf)
 
 **[6]** "DeepPose: Human Pose Estimation via Deep Neural Networks"[[pdf]](https://arxiv.org/pdf/1312.4659.pdf)
+
+**[7]** "Deep Learning for Real-Time Atari Game Play
+Using Offline Monte-Carlo Tree Search Planning"[[pdf]](https://papers.nips.cc/paper/5421-deep-learning-for-real-time-atari-game-play-using-offline-monte-carlo-tree-search-planning.pdf)
+
+**[8]** "Breast Mass Classification from Mammograms using
+Deep Convolutional Neural Networks"[[pdf]](https://arxiv.org/pdf/1612.00542.pdf)
+
+**[9]** "Rotation-invariant convolutional neural networks for galaxy
+morphology prediction"[[pdf]](https://arxiv.org/pdf/1503.07077.pdf)
+
+
+**[10]** "Traffic Sign Recognition with Multi-Scale Convolutional Networks"[[pdf]](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf)
+
+**[11]** "Image Style Transfer Using Convolutional Neural Networks"[[pdf]](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)
+
+**[12]** "Controlling Perceptual Factors in Neural Style Transfer"[[pdf]](https://arxiv.org/pdf/1611.07865.pdf)
