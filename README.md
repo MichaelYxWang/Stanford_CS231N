@@ -19,6 +19,8 @@ Recourse collection contributors: [Michael Wang](https://github.com/MichaelYxWan
 
 **[2]** "Histograms of Oriented Gradients for Human Detection"[[pdf]](https://lear.inrialpes.fr/people/triggs/pubs/Dalal-cvpr05.pdf)
 
+**[3]** "A Bayesian Hierarchical Model for Learning Natural Scene Categories"[[pdf]](http://vision.stanford.edu/documents/Fei-FeiPerona2005.pdf)
+
 
 ### Lecture 4 - Backpropagation and Neural Networks:
 **[1]** "Object Recognition from Local Scale-Invariant Features"[[pdf]](https://www.cs.ubc.ca/~lowe/papers/iccv99.pdf)
