@@ -59,8 +59,27 @@ morphology prediction"[[pdf]](https://arxiv.org/pdf/1503.07077.pdf)
 **[12]** "Controlling Perceptual Factors in Neural Style Transfer"[[pdf]](https://arxiv.org/pdf/1611.07865.pdf)
 
 
-### Lecture 6 - Training Neural Networks:
+### Lecture 6 - Training Neural Networks I:
 **[1]**  Papers on weight initializations are on the lecture slide.
 
 **[2]** "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift"[[pdf]](https://arxiv.org/pdf/1502.03167.pdf)
+
+
+### Lecture 7 - Training Neural Networks II:
+
+**[1]** "On the importance of initialization and momentum in deep learning"[[pdf]](http://www.cs.toronto.edu/~fritz/absps/momentum.pdf)
+
+**[2]** "Adaptive Subgradient Methods for
+Online Learning and Stochastic Optimization"[[pdf]](http://www.jmlr.org/papers/volume12/duchi11a/duchi11a.pdf)
+
+**[3]** "ADAM: A METHOD FOR STOCHASTIC OPTIMIZATION"[[pdf]](https://arxiv.org/pdf/1412.6980.pdf)
+
+**[4]** "On Optimization Methods for Deep Learning"[[pdf]](https://ai.stanford.edu/~ang/papers/icml11-OptimizationForDeepLearning.pdf)
+
+**[5]** "SGDR: STOCHASTIC GRADIENT DESCENT WITH
+WARM RESTARTS"[[pdf]](https://arxiv.org/pdf/1608.03983.pdf)
+
+**[6]** "SNAPSHOT ENSEMBLES: TRAIN 1, GET M FOR FREE"[[pdf]](https://arxiv.org/pdf/1704.00109.pdf)
+
+**[7]** "ACCELERATION OF STOCHASTIC APPROXIMATION BY AVERAGING*"[[pdf]](http://www.meyn.ece.ufl.edu/archive/spm_files/Courses/ECE555-2011/555media/poljud92.pdf)
 
