@@ -28,4 +28,16 @@ Recourse collection contributors: [Michael Wang](https://github.com/MichaelYxWan
 **[2]** "Histograms of Oriented Gradients for Human Detection"[[pdf]](https://lear.inrialpes.fr/people/triggs/pubs/Dalal-cvpr05.pdf)
 
 
-### Lecture 6 - Training Neural Networks:
+### Lecture 5 - Convolutional Neural Networks:
+**[1]** "ImageNet Classification with Deep Convolutional
+Neural Networks"[[pdf]](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
+
+**[2]** "Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks"[[pdf]](https://arxiv.org/pdf/1506.01497.pdf)
+
+**[3]** "DeepFace: Closing the Gap to Human-Level Performance in Face Verification"[[pdf]](https://www.cs.toronto.edu/~ranzato/publications/taigman_cvpr14.pdf)
+
+**[4]** "DeepFace: Closing the Gap to Human-Level Performance in Face Verification"[[pdf]](https://arxiv.org/pdf/1312.6034.pdf)
+
+**[5]** "Two-Stream Convolutional Networks for Action Recognition in Videos"[[pdf]](https://arxiv.org/pdf/1406.2199.pdf)
+
+**[6]** "DeepPose: Human Pose Estimation via Deep Neural Networks"[[pdf]](https://arxiv.org/pdf/1312.4659.pdf)
