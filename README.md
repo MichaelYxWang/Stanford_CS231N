@@ -83,3 +83,12 @@ WARM RESTARTS"[[pdf]](https://arxiv.org/pdf/1608.03983.pdf)
 
 **[7]** "ACCELERATION OF STOCHASTIC APPROXIMATION BY AVERAGING*"[[pdf]](http://www.meyn.ece.ufl.edu/archive/spm_files/Courses/ECE555-2011/555media/poljud92.pdf)
 
+**[8]** "Regularization of Neural Networks using DropConnect*"[[pdf]](http://yann.lecun.com/exdb/publis/pdf/wan-icml-13.pdf)
+
+**[9]** "Deep Networks with Stochastic Depth"[[pdf]](https://arxiv.org/pdf/1603.09382.pdf)
+
+**[10]** "DeCAF: A Deep Convolutional Activation Feature
+for Generic Visual Recognition"[[pdf]](https://arxiv.org/pdf/1310.1531.pdf)
+
+**[11]** "DeCAF: A Deep Convolutional Activation Feature
+for Generic Visual Recognition"[[pdf]](https://arxiv.org/pdf/1310.1531.pdf)
