@@ -57,3 +57,10 @@ morphology prediction"[[pdf]](https://arxiv.org/pdf/1503.07077.pdf)
 **[11]** "Image Style Transfer Using Convolutional Neural Networks"[[pdf]](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)
 
 **[12]** "Controlling Perceptual Factors in Neural Style Transfer"[[pdf]](https://arxiv.org/pdf/1611.07865.pdf)
+
+
+### Lecture 6 - Training Neural Networks:
+**[1]**  Papers on weight initializations are on the lecture slide.
+
+**[2]** "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift"[[pdf]](https://arxiv.org/pdf/1502.03167.pdf)
+
