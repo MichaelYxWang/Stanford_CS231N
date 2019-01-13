@@ -66,7 +66,6 @@ morphology prediction"[[pdf]](https://arxiv.org/pdf/1503.07077.pdf)
 
 
 ### Lecture 7 - Training Neural Networks II:
-
 **[1]** "On the importance of initialization and momentum in deep learning"[[pdf]](http://www.cs.toronto.edu/~fritz/absps/momentum.pdf)
 
 **[2]** "Adaptive Subgradient Methods for
@@ -94,3 +93,12 @@ for Generic Visual Recognition"[[pdf]](https://arxiv.org/pdf/1310.1531.pdf)
 for Generic Visual Recognition"[[pdf]](https://arxiv.org/pdf/1310.1531.pdf)
 
 **[12]** "Fast RCNN"[[pdf]](https://arxiv.org/pdf/1504.08083.pdf)
+
+
+
+### Lecture 8 - Training Neural Networks II:
+**[1]** "DEEP LEARNING WITH DYNAMIC COMPUTATION GRAPHS"[[pdf]](https://arxiv.org/pdf/1702.02181.pdf)
+
+**[2]** "Deep Compositional Question Answering with Neural Module Networks"[[pdf]](https://arxiv.org/pdf/1511.02799.pdf)
+
+**[3]** "Learning to Compose Neural Networks for Question Answering"[[pdf]](https://arxiv.org/pdf/1601.01705.pdf)
