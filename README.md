@@ -96,7 +96,7 @@ for Generic Visual Recognition"[[pdf]](https://arxiv.org/pdf/1310.1531.pdf)
 
 
 
-### Lecture 8 - Training Neural Networks II:
+### Lecture 9 - Deep Learning Software:
 **[1]** "DEEP LEARNING WITH DYNAMIC COMPUTATION GRAPHS"[[pdf]](https://arxiv.org/pdf/1702.02181.pdf)
 
 **[2]** "Deep Compositional Question Answering with Neural Module Networks"[[pdf]](https://arxiv.org/pdf/1511.02799.pdf)
