@@ -92,3 +92,5 @@ for Generic Visual Recognition"[[pdf]](https://arxiv.org/pdf/1310.1531.pdf)
 
 **[11]** "DeCAF: A Deep Convolutional Activation Feature
 for Generic Visual Recognition"[[pdf]](https://arxiv.org/pdf/1310.1531.pdf)
+
+**[12]** "Fast RCNN"[[pdf]](https://arxiv.org/pdf/1504.08083.pdf)
