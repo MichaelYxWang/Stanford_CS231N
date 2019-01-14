@@ -36,7 +36,8 @@ Neural Networks"[[pdf]](https://papers.nips.cc/paper/4824-imagenet-classificatio
 
 **[3]** "DeepFace: Closing the Gap to Human-Level Performance in Face Verification"[[pdf]](https://www.cs.toronto.edu/~ranzato/publications/taigman_cvpr14.pdf)
 
-**[4]** "DeepFace: Closing the Gap to Human-Level Performance in Face Verification"[[pdf]](https://arxiv.org/pdf/1312.6034.pdf)
+**[4]** "Deep Inside Convolutional Networks: Visualising
+Image Classification Models and Saliency Maps"[[pdf]](https://arxiv.org/pdf/1312.6034.pdf)
 
 **[5]** "Two-Stream Convolutional Networks for Action Recognition in Videos"[[pdf]](https://arxiv.org/pdf/1406.2199.pdf)
 
@@ -50,7 +51,6 @@ Deep Convolutional Neural Networks"[[pdf]](https://arxiv.org/pdf/1612.00542.pdf)
 
 **[9]** "Rotation-invariant convolutional neural networks for galaxy
 morphology prediction"[[pdf]](https://arxiv.org/pdf/1503.07077.pdf)
-
 
 **[10]** "Traffic Sign Recognition with Multi-Scale Convolutional Networks"[[pdf]](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf)
 
@@ -96,9 +96,38 @@ for Generic Visual Recognition"[[pdf]](https://arxiv.org/pdf/1310.1531.pdf)
 
 
 
-### Lecture 9 - Deep Learning Software:
+### Lecture 8 - Deep Learning Software:
 **[1]** "DEEP LEARNING WITH DYNAMIC COMPUTATION GRAPHS"[[pdf]](https://arxiv.org/pdf/1702.02181.pdf)
 
 **[2]** "Deep Compositional Question Answering with Neural Module Networks"[[pdf]](https://arxiv.org/pdf/1511.02799.pdf)
 
 **[3]** "Learning to Compose Neural Networks for Question Answering"[[pdf]](https://arxiv.org/pdf/1601.01705.pdf)
+
+
+### Lecture 9 - CNN Architectures:
+**[1]** "ImageNet Classification with Deep Convolutional
+Neural Networks(AlexNet)"[[pdf]](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
+
+**[2]** "Visualizing and Understanding Convolutional Networks"[[pdf]](https://arxiv.org/pdf/1311.2901.pdf)
+
+**[3]** "VERY DEEP CONVOLUTIONAL NETWORKS FOR LARGE-SCALE IMAGE RECOGNITION (VGG)"[[pdf]](https://arxiv.org/pdf/1409.1556.pdf)
+
+**[4]** "Going deeper with convolutions (Google Net, Inception Net)"[[pdf]](https://arxiv.org/pdf/1409.4842.pdf)
+
+**[5]** "Deep Residual Learning for Image Recognition (ResNet)"[[pdf]](https://arxiv.org/pdf/1512.03385.pdf)
+
+**[6]** "Network in Network (NiN)"[[pdf]](https://arxiv.org/pdf/1312.4400.pdf)
+
+**[7]** "Wide Residual Networks"[[pdf]](https://arxiv.org/pdf/1605.07146.pdf)
+
+**[8]** "Aggregated Residual Transformations for Deep Neural Networks (ResNext)"[[pdf]](https://arxiv.org/pdf/1611.05431.pdf)
+
+**[9]** "Wide Residual Networks"[[pdf]](https://arxiv.org/pdf/1605.07146.pdf)
+
+**[10]** "Deep Networks with Stochastic Depth"[[pdf]](https://arxiv.org/pdf/1603.09382.pdf)
+
+**[11]** "FRACTALNET: ULTRA-DEEP NEURAL NETWORKS WITHOUT RESIDUALS"[[pdf]](https://arxiv.org/pdf/1605.07648.pdf)
+
+**[12]** "Densely Connected Convolutional Networks"[[pdf]](https://arxiv.org/pdf/1608.06993.pdf)
+
+**[13]** "SQUEEZENET: ALEXNET-LEVEL ACCURACY WITH 50X FEWER PARAMETERS AND <0.5MB MODEL SIZE"[[pdf]](https://arxiv.org/pdf/1602.07360.pdf)
